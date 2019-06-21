@@ -38,3 +38,9 @@ select {
 ::placeholder {
    color: black!important;
 }
+
+#ConfirmationNav:hover {
+   color: white;
+   background-color: #e8ca6f;
+   border-color: #e8ca6f;
+}
