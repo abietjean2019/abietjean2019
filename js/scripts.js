@@ -177,8 +177,10 @@ $(document).ready(function () {
 
         console.log($('#invite_code').val());
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if ($('#invite_code') == "211921") {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Votre code d\'invitation est erroné.'));
+        } else if ($('#TempsVenue') == -1) {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Vous devez indiquer votre présence'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbyOt9s4t5lpQqA7y3HSrSpzq5a8qjjmvJgjpu_MsjH2stbiUjw/exec', data)
                 .done(function (data) {
@@ -188,7 +190,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Un problème a eu lieu. Réessayez plus tard, ou contactez les organisateurs.'));
                 });
         }
     });
