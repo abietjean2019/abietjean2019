@@ -177,7 +177,7 @@ $(document).ready(function () {
 
         console.log($('#invite_code').val());
 
-        if ($('#invite_code') == "211921") {
+        if ($('#invite_code') != "211921") {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Votre code d\'invitation est erroné.'));
         } else if ($('#TempsVenue') == -1) {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Vous devez indiquer votre présence'));
