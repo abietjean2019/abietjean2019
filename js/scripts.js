@@ -173,7 +173,7 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Une seconde !</strong> Nous enregistrons vos informations.'));
 
         console.log($('#invite_code').val());
 
