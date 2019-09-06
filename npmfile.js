@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-    console.log("Visit https://wedding.rampatra.com !");
+    console.log("https://github.com/abietjean2019/abietjean2019.github.io");
 };
