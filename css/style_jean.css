@@ -45,3 +45,7 @@ select {
    background-color: #e8ca6f;
    border-color: #e8ca6f;
 }
+
+#second-photo-row {
+   margin-top: 30px;
+}
