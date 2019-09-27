@@ -177,6 +177,36 @@ $(document).ready(function () {
 
         console.log($('#invite_code').val());
 
+        if ($('#invite_code').val() != "211921") {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Votre code d\'invitation est erroné.'));
+        } else if ($('#TempsVenue').val() == -1) {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Vous devez indiquer votre présence'));
+        } else {
+            $.post('https://script.google.com/macros/s/AKfycbyOt9s4t5lpQqA7y3HSrSpzq5a8qjjmvJgjpu_MsjH2stbiUjw/exec', data)
+                .done(function (data) {
+                    console.log(data);
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                })
+                .fail(function (data) {
+                    console.log(data);
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Un problème a eu lieu. Réessayez plus tard, ou contactez les organisateurs.'));
+                });
+        }
+    });
+
+});
+
+
+    /********************** RSVP **********************/
+    $('#rsvp-formD').on('submit', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Une seconde !</strong> Nous enregistrons vos informations.'));
+
+        console.log($('#invite_code').val());
+
         if ($('#invite_code').val() != "211922") {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Désolé !</strong> Votre code d\'invitation est erroné.'));
         } else if ($('#TempsVenue').val() == -1) {
