@@ -49,3 +49,8 @@ select {
 #second-photo-row {
    margin-top: 30px;
 }
+
+#center-anim {
+   display:flex;
+   justify-content: center;
+}
